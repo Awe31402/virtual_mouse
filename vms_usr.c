@@ -23,6 +23,7 @@ int main(int argc, char *argv[])
 		if (x%2) x = -x; 
 		if (y%2) y = -y;
 
+		printf("wirte to attribute file : %d %d %d\n", x, y, 0);
 		sprintf(buffer, "%d %d %d", x, y, 0);
 		write(sim_fd, buffer, strlen(buffer));
 		fsync(sim_fd);
