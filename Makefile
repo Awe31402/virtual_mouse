@@ -8,11 +8,12 @@ all:
 	@make -C $(KDIR) M=$(PWD) modules
 usr:
 	gcc vms_usr.c -o vms_usr
+	gcc vms_event.c -o vms_event
 
 install_mod:
 	@echo "Installing module......"
 	sudo insmod vms.ko
-	sudo gpm -m /dev/input/event13 -t evdev
+	#sudo gpm -m /dev/input/event13 -t evdev
 
 uninstall_mod:
 	@echo "Uninstalling module....."
